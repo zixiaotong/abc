@@ -8,7 +8,9 @@ import java.util.List;
  */
 public class ArrayUtils {
     public static void main(String[] args) {
-        System.out.println(split(Lists.newArrayList(1, 5), 3));
+        List<Integer> list = new ArrayList();
+        list.add(1, 5);
+        System.out.println(split(list, 3));
     }
 
     public static List<List<Integer>> split(List<Integer> origin, int num) {
