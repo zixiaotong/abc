@@ -4,33 +4,30 @@ import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.abc.abc.model.GogoupCourse;
+import com.abc.abc.service.CourseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author shanglei
  * @date 2019/6/4 22:14
  */
-//@Controller
-@RestController
+@Controller
 public class IndexController {
+
+    @Autowired
+    private CourseService courseService;
+
     /**
      * 这里value写两个 就是可以服务于两个请求
      * RequestMapping和PostMapping不能重复使用
      * RestController 相当于Controller+ResponseBody
-     *
+     * <p>
      * 为请求的不能类型
      *
      * @GetMapping(path = {"/index4"})
@@ -102,5 +99,11 @@ public class IndexController {
         headers.put("a", Arrays.asList("aaa"));
         ResponseEntity entity = new ResponseEntity("aaaa", headers, HttpStatus.OK);
         return entity;
+    }
+
+    @GetMapping(path = {"/getCourse/{id}"})
+    @ResponseBody
+    public GogoupCourse getCourse(@PathVariable String id) {
+        return courseService.getCourseByUserId(Long.valueOf(id));
     }
 }

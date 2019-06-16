@@ -18,6 +18,39 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>product</id>
+            <properties>
+                <!-- db -->
+                <db.url></db.url>
+                <db.user></db.user>
+                <db.password></db.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <!-- db -->
+                <db.url></db.url>
+                <db.user></db.user>
+                <db.password></db.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- db -->
+                <db.url>jdbc:mysql://172.16.0.19:3306/zcool_gogoup</db.url>
+                <db.user>zcool</db.user>
+                <db.password>zcool</db.password>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <!--web 支持-->
         <dependency>
@@ -63,6 +96,29 @@
             <version>2.6</version>
         </dependency>
 
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <!-- 配置文件中需要和mysql驱动连接-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- swagger2 api -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!-- api doc -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.7.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -71,6 +127,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--生成 generatorConfig.xml 用到的插件-->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <!-- 如果有这个文件，就不生成了-->
+                <configuration>
+                    <overwrite>true</overwrite>
+                </configuration>
             </plugin>
         </plugins>
     </build>
