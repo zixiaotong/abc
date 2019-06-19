@@ -1,11 +1,15 @@
 package com.abc.abc.controller;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.abc.abc.model.GogoupCourse;
 import com.abc.abc.service.CourseService;
+import com.abc.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,6 +27,21 @@ public class IndexController {
     @Autowired
     private CourseService courseService;
 
+    @GetMapping("/")
+    public String welcome(Map<String, Object> model) {
+        model.put("time", DateUtil.timestampFormat(new Date()));
+        model.put("message", "Hello, world!");
+        return "welcome";
+    }
+
+    @RequestMapping(value = "/course")
+    public String user(HttpServletRequest request, HttpServletResponse response) {
+        String id = request.getParameter("id");
+        GogoupCourse course = courseService.getCourseByUserId(Long.valueOf(id));
+        request.setAttribute("course", course);
+        return "course";
+    }
+
     /**
      * 这里value写两个 就是可以服务于两个请求
      * RequestMapping和PostMapping不能重复使用
@@ -38,7 +57,7 @@ public class IndexController {
     //@GetMapping(path = {"/index4"})
     //@PostMapping(path = {"index3"})
     //@ResponseBody
-    public String index() {
+    public String index5() {
         return "index";
     }
 
@@ -101,9 +120,4 @@ public class IndexController {
         return entity;
     }
 
-    @GetMapping(path = {"/getCourse/{id}"})
-    @ResponseBody
-    public GogoupCourse getCourse(@PathVariable String id) {
-        return courseService.getCourseByUserId(Long.valueOf(id));
-    }
 }

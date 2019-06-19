@@ -37,5 +37,6 @@ public class BigDecimalUtils {
         BigDecimal a = new BigDecimal(101);
         BigDecimal b = new BigDecimal(101);
         bigDecimalCompareTo(a, b);
+//        price = price.multiply(new BigDecimal(coupon.getDiscount())).divide(new BigDecimal(10), 2, BigDecimal.ROUND_HALF_UP);
     }
 }

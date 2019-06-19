@@ -10,6 +10,7 @@
     </parent>
     <groupId>com.abc</groupId>
     <artifactId>abc</artifactId>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>abc</name>
     <description>Demo project for Spring Boot</description>
@@ -44,9 +45,9 @@
             </activation>
             <properties>
                 <!-- db -->
-                <db.url>jdbc:mysql://172.16.0.19:3306/zcool_gogoup</db.url>
-                <db.user>zcool</db.user>
-                <db.password>zcool</db.password>
+                <db.url>jdbc:mysql://47.98.146.184:3306/abc</db.url>
+                <db.user>root</db.user>
+                <db.password>abc123</db.password>
             </properties>
         </profile>
     </profiles>
