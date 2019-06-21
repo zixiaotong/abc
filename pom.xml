@@ -157,6 +157,28 @@
                     <warName>abc</warName>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo message="--copy appdir to server's dir"/>
+                                <echo message="--deploy abc-web project"/>
+                                <delete dir="/apache/abc-tomcat/webapps/"/>
+                                <copy todir="/apache/abc-tomcat/webapps/">
+                                    <fileset dir="target/${project.artifactId}/"/>
+                                </copy>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
