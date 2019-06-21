@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.abc</groupId>
     <artifactId>abc</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>abc</name>
     <description>Demo project for Spring Boot</description>
@@ -137,6 +137,24 @@
                 <!-- 如果有这个文件，就不生成了-->
                 <configuration>
                     <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+            <!--用1.8编译并且设置编码-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <!-- war 插件来定义打包以后的 war 包名称 -->
+                <configuration>
+                    <warName>abc</warName>
                 </configuration>
             </plugin>
         </plugins>
