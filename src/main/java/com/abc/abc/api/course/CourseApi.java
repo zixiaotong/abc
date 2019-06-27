@@ -31,4 +31,14 @@ public class CourseApi {
         GogoupCourse user = courseService.getCourseByUserId(Long.valueOf(id));
         return user;
     }
+
+    @RequestMapping(value = "/getCourseByCourseIds", method = RequestMethod.GET)
+    @ApiOperation(value = "根据课程id获取课程数据", notes = "根据课程id获取课程数据")
+    @ApiImplicitParams({//请求参数描述
+            @ApiImplicitParam(name = "id", value = "课程ID", required = true, dataTypeClass = Long.class),
+    })
+    public GogoupCourse getCourseByCourseIds() {
+        GogoupCourse user = courseService.getCourseByUserId(Long.valueOf(4));
+        return user;
+    }
 }
