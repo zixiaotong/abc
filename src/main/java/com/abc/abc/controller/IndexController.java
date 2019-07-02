@@ -34,7 +34,7 @@ public class IndexController {
         return "welcome";
     }
 
-    @RequestMapping(value = "/course")
+    @RequestMapping("/course")
     public String user(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
         GogoupCourse course = courseService.getCourseByUserId(Long.valueOf(id));
