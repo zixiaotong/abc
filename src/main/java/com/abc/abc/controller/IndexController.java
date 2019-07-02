@@ -27,7 +27,7 @@ public class IndexController {
     @Autowired
     private CourseService courseService;
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
         model.put("time", DateUtil.timestampFormat(new Date()));
         model.put("message", "Hello, world!");
