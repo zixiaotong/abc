@@ -1,0 +1,11 @@
+通常意义上如果一个对象状态的改变需要通知很多对这个对象关注的一系列对象，就可以使用观察者模式。
+
+JDK中已经给实现了观察者模式
+
+
+java.util.Observable
+
+接口
+java.util.Observer
+    //这个方法是观察者在观察对象产生变化时所做的响应动作，从中传入了观察的对象和一个预留参数
+    void update(Observable o, Object arg);
