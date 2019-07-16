@@ -120,6 +120,12 @@
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.7.2</version>
         </dependency>
+        <!--  从html中提取中文内容      -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.10.2</version>
+        </dependency>
 
     </dependencies>
 

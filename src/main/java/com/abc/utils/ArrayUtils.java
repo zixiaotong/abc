@@ -1,5 +1,7 @@
 package com.abc.utils;
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,9 +10,7 @@ import java.util.List;
  */
 public class ArrayUtils {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList();
-        list.add(1, 5);
-        System.out.println(split(list, 3));
+        System.out.println(split(Lists.newArrayList(1,5), 3));
     }
 
     public static List<List<Integer>> split(List<Integer> origin, int num) {
