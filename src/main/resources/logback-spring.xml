@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <substitutionProperty name="log.base" value="/data/logs/abc/"/>
     <substitutionProperty name="log.level" value="info"/>
@@ -6,6 +7,7 @@
             <pattern>
                 %d{yyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
             </pattern>
+            <charset>UTF-8</charset>
         </encoder>
     </appender>
 
@@ -13,7 +15,6 @@
         <File>${log.base}/abc.log</File>
         <encoder>
             <Pattern>%d{yyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} [%file:%line] - %msg%n</Pattern>
-            <charest>UTF-8</charest>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- rollover daily -->
