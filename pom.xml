@@ -27,6 +27,9 @@
                 <db.url></db.url>
                 <db.user></db.user>
                 <db.password></db.password>
+                <!--log-->
+                <logger.base>/data/logs/abc/</logger.base>
+                <logger.level>info</logger.level>
             </properties>
         </profile>
         <profile>
@@ -36,6 +39,9 @@
                 <db.url></db.url>
                 <db.user></db.user>
                 <db.password></db.password>
+                <!--log-->
+                <logger.base>/data/logs/abc/</logger.base>
+                <logger.level>info</logger.level>
             </properties>
         </profile>
         <profile>
