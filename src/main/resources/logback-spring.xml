@@ -1,6 +1,6 @@
 <configuration>
-    <substitutionProperty name="log.base" value="@logger.base@"/>
-    <substitutionProperty name="log.level" value="@logger.level@"/>
+    <substitutionProperty name="log.base" value="/data/logs/abc/"/>
+    <substitutionProperty name="log.level" value="info"/>
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>
