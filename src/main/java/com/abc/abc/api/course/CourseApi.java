@@ -1,7 +1,9 @@
 package com.abc.abc.api.course;
 
+import com.abc.abc.controller.BaseController;
 import com.abc.abc.model.GogoupCourse;
 import com.abc.abc.service.CourseService;
+import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -18,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "课程相关的接口")
 @RestController
 @RequestMapping(value = "/CourseApi")
-public class CourseApi {
+public class CourseApi extends BaseController {
     @Autowired
     private CourseService courseService;
 
@@ -28,8 +30,14 @@ public class CourseApi {
             @ApiImplicitParam(name = "id", value = "课程ID", required = true, dataTypeClass = Long.class),
     })
     public GogoupCourse getCourseByUserId(@PathVariable("id") Long id) {
-        GogoupCourse user = courseService.getCourseByUserId(Long.valueOf(id));
-        return user;
+        try {
+            this.log_info("根据课程id获取课程数据-课程ID:{}", new Object[]{id});
+            GogoupCourse user = courseService.getCourseByUserId(Long.valueOf(id));
+            return user;
+        } catch (Exception e) {
+            this.log_error("getCourseByUserId", e);
+        }
+        return null;
     }
 
     @RequestMapping(value = "/getCourseByCourseIds", method = RequestMethod.GET)

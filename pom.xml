@@ -48,6 +48,9 @@
                 <db.url>jdbc:mysql://47.98.146.184:3306/abc</db.url>
                 <db.user>root</db.user>
                 <db.password>abc123</db.password>
+                <!--log-->
+                <logger.base>/data/logs/abc/</logger.base>
+                <logger.level>info</logger.level>
             </properties>
         </profile>
     </profiles>
@@ -63,13 +66,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
+        <!--test-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <!--jsp页面使用jstl标签-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -82,12 +84,11 @@
             <!--如果加上它 jsp页面就访问不到-->
             <!--<scope>provided</scope>-->
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.1</version>
-            <!--<scope>test</scope>-->
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
         <!--提供了一些基础的工具类服务-->
@@ -96,7 +97,6 @@
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
-
         <!-- mybatis -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -126,7 +126,17 @@
             <artifactId>jsoup</artifactId>
             <version>1.10.2</version>
         </dependency>
-
+        <!--  fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.30</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baidu.disconf</groupId>
+            <artifactId>disconf-client</artifactId>
+            <version>2.6.36</version>
+        </dependency>
     </dependencies>
 
     <build>
