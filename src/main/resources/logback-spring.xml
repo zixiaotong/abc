@@ -2,6 +2,7 @@
 <configuration>
     <substitutionProperty name="log.base" value="/data/logs/abc/"/>
     <substitutionProperty name="log.level" value="info"/>
+    <!-- tomcat的日志 猜测-->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>
@@ -11,6 +12,7 @@
         </encoder>
     </appender>
 
+    <!-- 自己置顶的日志猜测-->
     <appender name="abcFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${log.base}/abc.log</File>
         <encoder>
