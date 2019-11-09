@@ -83,6 +83,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+        <!--可以把返回格式转换成为xml-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
         <!--用于编译jsp-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>

@@ -3,7 +3,6 @@ package com.abc.abc.api.course;
 import com.abc.abc.controller.BaseController;
 import com.abc.abc.model.GogoupCourse;
 import com.abc.abc.service.CourseService;
-import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
