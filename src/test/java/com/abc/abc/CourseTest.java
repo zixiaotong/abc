@@ -25,6 +25,5 @@ public class CourseTest {
     public void test1() {
         GogoupCourse course = courseService.getCourseByUserId(444L);
         System.out.println("course：" + JSON.toJSONString(course));
-
     }
 }

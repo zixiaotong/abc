@@ -17,13 +17,17 @@ public class ListSort {
 		// 正序
 		idListSort.sort(Comparator.naturalOrder());
 
-		String s = StringUtils.join(idListSort.toArray(),",");
+		String s = StringUtils.join(idListSort.toArray(), ",");
 		System.out.println(s);
 
 		String ids = StringUtils.join(idListSort.toArray(), ",");
-//		System.out.println(ids);
+		// System.out.println(ids);
 		// 逆序
 		idListSort.sort(Comparator.reverseOrder());
-//		System.out.println(idListSort);
+		// System.out.println(idListSort);
+
+		// // 按照直播开始时间做了从小到大的排序
+		// Collections.sort(appIndexCourseLives,
+		// Comparator.comparing(AppIndexCourseLive::getBeiginTime));
 	}
 }
