@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <substitutionProperty name="log.base" value="/data/logs/abc/"/>
-    <substitutionProperty name="log.level" value="info"/>
+    <substitutionProperty name="log.base" value="@logger.base@"/>
+    <substitutionProperty name="log.level" value="@logger.level@"/>
     <!-- tomcat的日志 猜测-->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

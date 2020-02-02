@@ -33,18 +33,6 @@
             </properties>
         </profile>
         <profile>
-            <id>test</id>
-            <properties>
-                <!-- db -->
-                <db.url></db.url>
-                <db.user></db.user>
-                <db.password></db.password>
-                <!--log-->
-                <logger.base>/data/logs/abc/</logger.base>
-                <logger.level>info</logger.level>
-            </properties>
-        </profile>
-        <profile>
             <id>dev</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -55,7 +43,7 @@
                 <db.user>root</db.user>
                 <db.password>abc123</db.password>
                 <!--log-->
-                <logger.base>/data/logs/abc/</logger.base>
+                <logger.base>/Users/zishang/data/logs/abc/</logger.base>
                 <logger.level>info</logger.level>
             </properties>
         </profile>
@@ -83,7 +71,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
-        <!--可以把返回格式转换成为xml-->
+        <!--可以把返回格式转换成为xml 加上此包返回默认就成xml了，删掉默认就成json了-->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
@@ -148,6 +136,12 @@
             <artifactId>disconf-client</artifactId>
             <version>2.6.36</version>
         </dependency>
+        <!--        CounterService 可以实现对接口访问次数的统计 好像2.0就没有-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-actuator</artifactId>-->
+        <!--            <version>1.5.2.RELEASE</version>-->
+        <!--        </dependency>-->
     </dependencies>
 
     <build>
