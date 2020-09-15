@@ -1,0 +1,122 @@
+/*css的初始化*/
+
+* {
+    /* 把所有标签内外边距清零 */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+}
+
+a {
+    /* 清除a标签内下划线 */
+    text-decoration: none;
+    font: 12px arial, 'microsoft yahei';
+    color: #b0b0b0;
+}
+
+
+/* 版心的设置 */
+
+.w {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/* 顶部快捷菜单 */
+
+header {
+    /* 通栏不用写宽 此顶部盒子的宽度是该页面的宽度 */
+    height: 40px;
+    background-color: #333;
+    line-height: 40px;
+}
+
+
+/* 后代选择器 中间的版心*/
+
+header.w {
+    /* background-color: pink; */
+    height: 40px;
+}
+
+header span {
+    color: #b0b0b0;
+    margin: 0 8px;
+}
+
+.top {
+    background-color: #fff;
+    height: 810px;
+}
+
+li {
+    /* 清楚列表默认符号 */
+    list-style: none;
+}
+
+nav {
+    height: 100px;
+    line-height: 100px;
+    /* background-color: pink; */
+}
+
+nav li {
+    float: left;
+    margin-left: 25px;
+}
+
+nav img {
+    margin-top: 22px;
+}
+
+nav a {
+    font-size: 16px;
+    color: #333;
+}
+
+
+/* 注意 banna外面大盒子不浮动要给高度 */
+
+.banna {
+    height: 460px;
+}
+
+
+/* 有背景颜色的必须要有宽和高，背景撑不开盒子 */
+
+.banna .fl {
+    width: 235px;
+    height: 460px;
+    background-color: #2c505f;
+}
+
+.banna ul {
+    margin-top: 34px;
+}
+
+.banna li {
+    height: 42px;
+}
+
+.banna a {
+    display: block;
+    /* 块元不设置宽度，宽度会和父元素的宽一样 */
+    color: #fff;
+    padding: 30px 30px;
+}
+
+.banna span {
+    float: right;
+}
