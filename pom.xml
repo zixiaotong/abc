@@ -136,6 +136,10 @@
             <artifactId>disconf-client</artifactId>
             <version>2.6.36</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
         <!--        CounterService 可以实现对接口访问次数的统计 好像2.0就没有-->
         <!--        <dependency>-->
         <!--            <groupId>org.springframework.boot</groupId>-->

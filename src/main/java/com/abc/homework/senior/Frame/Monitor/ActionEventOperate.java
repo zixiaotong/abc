@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  */
 public class ActionEventOperate {
 	public static void main(String[] args) {
-		Frame f = new Frame("ActionEvent Operate");
+		Frame f = new Frame("ActionEvent operate");
 		Button b1 = new Button("Start");
 		Button b2 = new Button("Stop");
 		Monitor monitor = new Monitor();
